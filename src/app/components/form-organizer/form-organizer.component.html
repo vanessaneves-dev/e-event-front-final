@@ -1,0 +1,173 @@
+<form>
+  <div id="contact-us" class="overflow-hidden py-16 px-4">
+    <div class="relative mx-auto max-w-xl">
+      <svg
+        class="absolute left-full translate-x-1/2 transform"
+        width="404"
+        height="404"
+        fill="none"
+        viewBox="0 0 404 404"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="85737c0e-0916-41d7-917f-596dc7edfa27"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-indigo-300 dark:text-slate-600"
+              fill="currentColor"
+            ></rect>
+          </pattern>
+        </defs>
+        <rect
+          width="404"
+          height="404"
+          fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
+        ></rect>
+      </svg>
+      <svg
+        class="absolute right-full bottom-0 -translate-x-1/2 transform"
+        width="404"
+        height="404"
+        fill="none"
+        viewBox="0 0 404 404"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="85737c0e-0916-41d7-917f-596dc7edfa27"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-indigo-300 dark:text-slate-800"
+              fill="currentColor"
+            ></rect>
+          </pattern>
+        </defs>
+        <rect
+          width="404"
+          height="404"
+          fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
+        ></rect>
+      </svg>
+      <div class="bg-white shadow-lg p-8 text-center rounded-[2rem]">
+        <div class="text-center">
+          <h2
+            class="text-[1.75rem] font-extrabold uppercase font-mono bg-gradient-to-r from-indigo-600 via-indigo-400 to-indigo-500 inline-block text-transparent bg-clip-text"
+          >
+            Cadastro de organizadore
+          </h2>
+        </div>
+        <div class="mt-6">
+          <form
+            [formGroup]="formOrganizer"
+            class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 p-2 sm:gap-x-8 font-light"
+          >
+            <div class="sm:col-span-2">
+              <div class="bg-white p-2 rounded-lg">
+                <div class="relative bg-inherit">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    formControlName="name"
+                    class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                  /><label
+                    for="name"
+                    class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                    >Nome/Empresa</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <div class="bg-white p-2 rounded-lg">
+                <div class="relative bg-inherit">
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    formControlName="username"
+                    class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                  /><label
+                    for="username"
+                    class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                    >UserName/Nome fantasia</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <div class="bg-white p-2 rounded-lg">
+                <div class="relative bg-inherit">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    formControlName="email"
+                    class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                  /><label
+                    for="email"
+                    class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                    >Email</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <div class="bg-white p-2 rounded-lg">
+                <div class="relative bg-inherit">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    formControlName="password"
+                    class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                  /><label
+                    for="password"
+                    class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                    >Senha</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center sm:col-span-2 mb-2">
+              <app-button-main
+                (click)="cadastroOrg()"
+                type="submit"
+                text="Cadastrar"
+              ></app-button-main>
+            </div>
+          </form>
+          <a
+            href="/login"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          >
+            <p>Já possui cadastro?</p>
+            Clique aqui e faça seu login</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

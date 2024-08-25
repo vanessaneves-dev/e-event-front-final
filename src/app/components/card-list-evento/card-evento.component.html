@@ -1,0 +1,31 @@
+<section class="py-1">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div
+      *ngFor="let event of events"
+      class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg"
+    >
+      <div class="lg:w-1/2">
+        <div
+          class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97');
+          "
+        ></div>
+      </div>
+      <div
+        class="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg"
+      >
+        <span class="text-sm text-indigo-500">{{ event.category }}</span>
+        <h2 class="text-2xl text-gray-600 font-semibold">
+          {{ event.title }}
+        </h2>
+
+        <div class="mt-8">
+          <a [routerLink]="['/evento-det', event.id]">
+            <app-button-main text="Detalhes"> </app-button-main>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

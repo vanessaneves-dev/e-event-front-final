@@ -1,0 +1,132 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div id="contact-us" class="overflow-hidden py-16 px-4">
+    <div class="relative mx-auto max-w-xl">
+      <svg
+        class="absolute left-full translate-x-1/2 transform"
+        width="404"
+        height="404"
+        fill="none"
+        viewBox="0 0 404 404"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="85737c0e-0916-41d7-917f-596dc7edfa27"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-indigo-300 dark:text-slate-600"
+              fill="currentColor"
+            ></rect>
+          </pattern>
+        </defs>
+        <rect
+          width="404"
+          height="404"
+          fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
+        ></rect>
+      </svg>
+      <svg
+        class="absolute right-full bottom-0 -translate-x-1/2 transform"
+        width="404"
+        height="404"
+        fill="none"
+        viewBox="0 0 404 404"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="85737c0e-0916-41d7-917f-596dc7edfa27"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-indigo-300 dark:text-slate-800"
+              fill="currentColor"
+            ></rect>
+          </pattern>
+        </defs>
+        <rect
+          width="404"
+          height="404"
+          fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
+        ></rect>
+      </svg>
+      <div class="bg-white shadow-lg p-8 text-center rounded-[2rem]">
+        <div class="text-center">
+          <h2
+            class="text-[1.75rem] font-extrabold uppercase font-mono bg-gradient-to-r from-indigo-600 via-indigo-400 to-indigo-500 inline-block text-transparent bg-clip-text"
+          >
+            Cadastro de usuário
+          </h2>
+        </div>
+        <div class="mt-6">
+          <form
+            class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 font-light"
+          >
+            <div class="sm:col-span-2">
+              <app-input
+                type="text"
+                text="Nome"
+                placeholder="Nome"
+                formControlName="name"
+              ></app-input>
+            </div>
+            <div class="sm:col-span-2">
+              <app-input
+                type="text"
+                text="UserName"
+                placeholder="UserName"
+                formControlName="username"
+              ></app-input>
+            </div>
+
+            <div class="sm:col-span-2">
+              <app-input
+                type="email"
+                text="Email"
+                placeholder="Email"
+                formControlName="email"
+              ></app-input>
+            </div>
+
+            <div class="sm:col-span-2">
+              <app-input
+                type="password"
+                text="Senha"
+                placeholder="Senha"
+                formControlName="password"
+              ></app-input>
+            </div>
+
+            <div class="flex justify-center sm:col-span-2 mb-2">
+              <app-button-main type="submit" text="Cadastrar"></app-button-main>
+            </div>
+          </form>
+          <a
+            href="/login"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          >
+            <p>Já possui cadastro?</p>
+            Clique aqui e faça seu login</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
