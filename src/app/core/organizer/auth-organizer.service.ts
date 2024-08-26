@@ -20,6 +20,7 @@ export class AuthOrganizerService {
 
   }
 
+ 
   public createAuthorizationHeader(): HttpHeaders {
     const jwtToken = localStorage.getItem('JWT');
     if (jwtToken) {
@@ -38,7 +39,9 @@ export class AuthOrganizerService {
     return this.http.get<string>(`${this.apiUrl}/user`, { headers });
   }
 
-
+  getUserImageUrl(id: string): Observable<string | null> {
+    return this.http.get<string | null>(`${this.apiUrl}/organizer/${id}`);
+  }
   
 
  logout() {

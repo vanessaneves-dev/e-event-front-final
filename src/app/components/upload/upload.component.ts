@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 
 
@@ -8,6 +8,7 @@ import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
+  @Output() fileUploaded = new EventEmitter<string>();
   uploadedFileURL: string = '';
 
   constructor(private storage: Storage) {}
@@ -29,6 +30,7 @@ export class UploadComponent {
       // Obtém a URL de download do arquivo
       const url = await getDownloadURL(fileRef);
       this.uploadedFileURL = url;
+      this.fileUploaded.emit(this.uploadedFileURL);
     } catch (error) {
       console.error("Error uploading file: ", error);
     }

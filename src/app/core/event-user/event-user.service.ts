@@ -19,7 +19,7 @@ export class EventUserService {
     formData.append('email', user.email);
     formData.append('password', user.password);
 
-    return this.http.post<string>(`${this.apiUrl}/urers`, formData);
+    return this.http.post<string>(`${this.apiUrl}/user/new/`, formData);
   }
 
   getAllUsers(): Observable<EventUserInterface[]> {

@@ -101,11 +101,11 @@
                   rows="3"
                   placeholder="Event Description"
                   formControlName="description"
-                  class="peer bg-white h-48 w-full rounded-lg text-gray-500 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                  class="peer bg-white h-48 w-full rounded-lg text-gray-500 placeholder-transparent ring-2 p-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
                 ></textarea>
                 <label
                   for="description"
-                  class="absolute cursor-text left-0 -top-3 text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                  class="absolute cursor-text left-0 -top-3 bg-white text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
                   >Descreva seu evento</label
                 >
               </div>
@@ -121,7 +121,10 @@
                 <option value="Musica">Música</option>
                 <option value="Esportes">Esportes</option>
                 <option value="Artes">Artes</option>
+                <option value="Educação">Educação</option>
                 <option value="Tecnologia">Tecnologia</option>
+                <option value="Cultura">Cultura</option>
+                <option value="Workshop">Workshop</option>
               </select>
               <label
                 for="category"
@@ -263,41 +266,19 @@
               </div>
             </div>
 
-            <div class="rounded-lg border border-indigo-500 p-4 w-36 relative">
-              <label
-                for="upload"
-                class="flex flex-col items-center gap-2 cursor-pointer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-10 w-10 fill-white stroke-indigo-500"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                <span class="text-gray-500 font-medium"
-                  >Adicione uma imagem</span
-                >
-              </label>
+            <div class="relative">
               <input
-                id="upload"
-                type="file"
-                class="hidden"
-                (change)="onFileSelected($event)"
-              />
+                type="text"
+                id="imagem"
+                name="imagem"
+                formControlName="image"
+                class="peer bg-white h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+              /><label
+                for="state"
+                class="absolute bg-white cursor-text left-0 -top-3 text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                >URL de imagem</label
+              >
             </div>
-            <img
-              *ngIf="imagePreview"
-              [src]="imagePreview"
-              alt="Image Preview"
-              class="w-full h-36 object-cover border rounded-md"
-            />
 
             <div class="flex justify-between sm:col-span-2 mb-2">
               <app-button-secund href="/" text="Cancelar"></app-button-secund>

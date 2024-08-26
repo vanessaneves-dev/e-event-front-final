@@ -11,6 +11,7 @@ import { EventService } from 'src/app/core/events/event.service';
 })
 export class FormEventComponent implements OnInit{
 formEvent!: FormGroup;
+image: string = '';
 
 constructor(private formBuilder: FormBuilder,
   private eventService: EventService,
@@ -24,13 +25,17 @@ constructor(private formBuilder: FormBuilder,
       date: [null, [Validators.required]],
       time: [null, [Validators.required]],
       category: ['', [Validators.required]],      
-      street: [null],
-      number: [null],
-      city: [null],
-      state: [null],
-      postalCode: [null],       
+      street: [''],
+      number: [''],
+      city: [''],
+      state: [''],
+      postalCode: [''],       
      image: [null],
     })
+  }
+
+  onFileUpload(url: string){
+    this.formEvent.patchValue({ image: url});
   }
 
   cadastroEvent(){

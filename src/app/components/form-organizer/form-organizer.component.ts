@@ -36,7 +36,7 @@ constructor(private formBuilder: FormBuilder,
     this.organizerService.save(formData).subscribe({
       next: (value) => {
         console.log("Cadastro concluido", value),
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/login')
       },
       error: ( err) => {
         console.log('Erro ', err);

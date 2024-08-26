@@ -33,9 +33,9 @@ export class EventService {
     return this.http.put<EventInterface>(this.apiUrl + /event/ + updateEvent.id, updateEvent)
   }
   
-  public remove(removeEvent: EventInterface) {
+  public remove(removeEvent: EventInterface): Observable<void> {
     // this.apiURL+'/'+id
     console.log('entrou no remove');
-    return this.http.delete(this.apiUrl + '/organizer/event/' + removeEvent.id);
+    return this.http.delete<void>(this.apiUrl + '/organizer/event/delete/' + removeEvent.id, { headers: this.authService.createAuthorizationHeader() ?? {} });
   }
 }

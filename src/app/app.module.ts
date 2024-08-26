@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';  
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { ErrorInterceptorService } from './core/error-interceptor.service'; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +35,12 @@ import { ContatoComponent } from './pages/contato/contato.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { LoginOrgComponent } from './components/login-org/login-org.component';
+import { PerfilUserComponent } from './components/perfil-user/perfil-user.component';
+import { PerfilOrganizerComponent } from './pages/perfil-organizer/perfil-organizer.component';
+import { ListOrganizerComponent } from './components/list-organizer/list-organizer.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { TermosComponent } from './pages/termos/termos.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +67,13 @@ import { LoginOrgComponent } from './components/login-org/login-org.component';
     ContatoComponent,
     LoginComponent,
     LoginUserComponent,
-    LoginOrgComponent
+    LoginOrgComponent,
+    PerfilUserComponent,
+    PerfilOrganizerComponent,
+    ListOrganizerComponent,
+    ErrorPageComponent,
+    TermosComponent
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +85,9 @@ import { LoginOrgComponent } from './components/login-org/login-org.component';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

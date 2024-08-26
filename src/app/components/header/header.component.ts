@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthOrganizerService } from 'src/app/core/organizer/auth-organizer.service';
 
 
@@ -10,18 +11,27 @@ import { AuthOrganizerService } from 'src/app/core/organizer/auth-organizer.serv
 export class HeaderComponent implements OnInit{
   isLoggedIn: boolean = false;
   userName: string | null = null;
+  userImageUrl: string | null = null;
+  userId: string = '';
 
-  constructor(public authService: AuthOrganizerService) { }
+  constructor(public authService: AuthOrganizerService,
+    private router: Router
+  ) { }
+
+
   ngOnInit(): void {
     this.checkLoginStatus();
+    // this.userId = localStorage.getItem('userId') || '';
+    // console.log('User ID do localStorage:', this.userId);
+    
   }
 
-  checkLoginStatus() {
-    // Verifica se o token JWT está presente no localStorage
+
+  checkLoginStatus() {    
     const jwtToken = localStorage.getItem('JWT');
-    this.isLoggedIn = !!jwtToken; // Define isLoggedIn como verdadeiro se o token existir
+    this.isLoggedIn = !!jwtToken;
     if (this.isLoggedIn) {
-      // Se estiver autenticado, obtém o nome do usuário do servidor
+      
       this.authService.getUserName().subscribe(
         (name: string | null) => this.userName = name,
         (error) => {
@@ -33,6 +43,14 @@ export class HeaderComponent implements OnInit{
       this.userName = null;
     }
   }
+
+  // navigateToProfile(): void {
+  //   if (this.userId) {
+  //     this.router.navigate(['/perfilOrganizer/', this.userId]);
+  //   } else {
+  //     console.error('User ID não encontrado!');
+  //   }
+  // }
 
   logout() {
     this.authService.logout();

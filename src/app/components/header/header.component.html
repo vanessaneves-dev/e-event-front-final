@@ -32,9 +32,25 @@
             href="/sobre"
           ></app-button-back>
         </li>
+        <!-- <li>
+          <app-button-back
+            class="button-font"
+            text="Organizadores"
+            href="/organizers"
+          ></app-button-back>
+        </li> -->
       </ul>
     </nav>
     <div class="flex flex-row items-center">
+      <div *ngIf="isLoggedIn">
+        <button>
+          <a href="/perfilOrganizer/:id">
+            <img
+              [src]="userImageUrl || 'assets/images/default-avatar.png'"
+              class="w-10 h-10 rounded-full"
+          /></a>
+        </button>
+      </div>
       <app-button-back
         *ngIf="!isLoggedIn"
         class="button-font"
@@ -45,7 +61,7 @@
       <div>
         <app-button-secund
           href="/cadastroEvento"
-          text="Crei seu evento"
+          text="Cadastre seu evento"
           *ngIf="isLoggedIn"
         ></app-button-secund>
       </div>
