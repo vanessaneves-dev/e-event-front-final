@@ -21,6 +21,7 @@ export class OrganizerService {
     return this.http.get<OrganizerInterface[]>(this.apiUrl + '/organizer/all');
   }
 
+  
   public update(updateOrganizer: OrganizerInterface): Observable<OrganizerInterface> {
     return this.http.put<OrganizerInterface>(this.apiUrl + '/organizer/' + updateOrganizer.id, updateOrganizer);
   }

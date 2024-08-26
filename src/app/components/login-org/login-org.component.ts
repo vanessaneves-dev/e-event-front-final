@@ -17,8 +17,6 @@ constructor(private formBuider: FormBuilder,
 ){}
   ngOnInit(): void {
     this.authOrganizer = this.formBuider.group({
-      name: [null, Validators.required],
-      username: [null,  Validators.required],
       email: [null,  [Validators.required, Validators.email]],
       password: [null,  Validators.required]
     })
@@ -29,8 +27,12 @@ constructor(private formBuider: FormBuilder,
       const email = this.authOrganizer.value.email;
       const password = this.authOrganizer.value.password;
       this.authOrganizerService.autenticarOrganizer(email, password).subscribe({
-        next: (value) => {
-          console.log("Login concluido", value),
+        next: (response) => {
+          console.log("Login concluido", response);
+          const jwtToken = response.access_organizer_token;
+          console.log("Token JWT:", jwtToken);
+          localStorage.setItem('JWT', jwtToken);
+          console.log("armazenou", jwtToken);
           this.router.navigateByUrl('/')
         },
         error: ( err) => {

@@ -36,13 +36,33 @@
     </nav>
     <div class="flex flex-row items-center">
       <app-button-back
+        *ngIf="!isLoggedIn"
         class="button-font"
         href="/login"
         text="Login"
       ></app-button-back>
 
       <div>
-        <app-button-main href="/cadastro" text="Cadastre-se"></app-button-main>
+        <app-button-secund
+          href="/cadastroEvento"
+          text="Crei seu evento"
+          *ngIf="isLoggedIn"
+        ></app-button-secund>
+      </div>
+      <div>
+        <app-button-main
+          *ngIf="isLoggedIn"
+          (click)="logout()"
+          text="Logout"
+        ></app-button-main>
+      </div>
+
+      <div>
+        <app-button-main
+          href="/cadastro"
+          text="Cadastre-se"
+          *ngIf="!isLoggedIn"
+        ></app-button-main>
       </div>
     </div>
   </div>

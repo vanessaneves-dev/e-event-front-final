@@ -19,10 +19,10 @@ constructor(private formBuilder: FormBuilder,
 ){}
   ngOnInit(): void {
     this.formOrganizer = this.formBuilder.group({
-      name: [null, [Validators.required]],        // Adicionado Validators
-      username: [null, [Validators.required]],    // Adicionado Validators
-      email: [null, [Validators.required, Validators.email]], // Adicionado Validators
-      password: [null, [Validators.required, Validators.minLength(6)]] // Adicionado Validators
+      name: [null, [Validators.required]],        
+      username: [null, [Validators.required]],   
+      email: [null, [Validators.required, Validators.email]], 
+      password: [null, [Validators.required, Validators.minLength(6)]] 
     })
   }
   cadastroOrg(){
