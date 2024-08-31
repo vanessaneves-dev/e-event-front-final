@@ -1,0 +1,177 @@
+<section class="py-10 my-auto n900">
+  <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
+    <div
+      class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center n800/40"
+    >
+      <div class="">
+        <div class="flex flex-col justify-end items-center mt-10 mb-10">
+          <h1
+            class="text-[3rem] font-extrabold uppercase font-mono bg-gradient-to-r from-gray-700 via-gray-400 to-gray-500 inline-block text-transparent bg-clip-text"
+          >
+            Olá, {{ username }}
+          </h1>
+        </div>
+        <div *ngIf="!isEditing">
+          <div
+            class="w-full rounded-sm bg-cover bg-opacity-30 bg-blur-sm bg-center bg-no-repeat items-center rounded-lg"
+            [style.background-image]="'url(' + imageUrl + ')'"
+          >
+            <div
+              class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full bg-cover bg-center bg-no-repeat"
+            >
+              <img
+                class="w-full h-full object-cover object-center rounded-full"
+                [src]="imageUrl || 'assets/images/default-avatar.png'"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full mt-6"
+          >
+            <div class="w-full mb-4">
+              <label for="" class="mb-2 ntext-gray-300">Nome / Empresa</label>
+              <p
+                class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
+              >
+                {{ perfilUserForm.get("name")?.value }}
+              </p>
+            </div>
+            <div class="w-full mb-4">
+              <label for="" class="ntext-gray-300"
+                >Username / Nome Fantasia</label
+              >
+              <p
+                class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
+              >
+                {{ perfilUserForm.get("username")?.value }}
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full"
+          >
+            <div class="w-full mb-4">
+              <label for="" class="mb-2 ntext-gray-300">Email</label>
+              <p
+                class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
+              >
+                {{ perfilUserForm.get("email")?.value }}
+              </p>
+            </div>
+            <div class="w-full mb-4">
+              <label for="" class="ntext-gray-300">Senha</label>
+              <p
+                class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
+              >
+                ••••••••
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-4 px-4 justify-end">
+            <button
+              (click)="toggleEditMode()"
+              class="p-4 px-4 rounded-lg bg-indigo-500 text-white text-lg font-semibold"
+            >
+              Editar
+            </button>
+            <!-- <button
+              (click)="deleteOrganizer()"
+              class="w-full p-4 rounded-lg bg-red-500 text-white text-lg font-semibold"
+            >
+              Deletar
+            </button> -->
+          </div>
+        </div>
+        <form
+          *ngIf="isEditing"
+          [formGroup]="perfilUserForm"
+          (ngSubmit)="updateUser()"
+        >
+          <div
+            class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center"
+            [style.background-image]="'url(' + imageUrl + ')'"
+          >
+            <div
+              class="mx-auto flex justify-center w-[141px] h-[141px] bg-blue-300/20 rounded-full bg-cover bg-center bg-no-repeat"
+            >
+              <img
+                class="w-full h-full object-cover object-center rounded-full"
+                [src]="imageUrl || 'assets/images/default-avatar.png'"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full"
+          >
+            <div class="w-full mb-4 mt-6">
+              <label for="" class="mb-2 ntext-gray-300">Nome</label>
+              <input
+                type="text"
+                class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                placeholder="Nome / Empresa"
+                formControlName="name"
+              />
+            </div>
+            <div class="w-full mb-4 lg:mt-6">
+              <label for="" class="ntext-gray-300">Username </label>
+              <input
+                type="text"
+                class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                placeholder="Username / Nome Fantasia"
+                formControlName="username"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full"
+          >
+            <div class="w-full mb-4 mt-6">
+              <label for="" class="mb-2 ntext-gray-300">Email</label>
+              <input
+                type="text"
+                class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                placeholder="Email"
+                formControlName="email"
+              />
+            </div>
+            <div class="w-full mb-4 lg:mt-6">
+              <label for="" class="ntext-gray-300">Senha</label>
+              <input
+                type="text"
+                class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+                placeholder="Senha"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-4">
+              <label class="ntext-gray-300">Imagem de Perfil</label>
+              <app-upload (fileUploaded)="onFileUploaded($event)"></app-upload>
+            </div>
+          </div>
+          <div class="mt-4 text-end">
+            <app-button-main
+              text="Salvar alterações"
+              href="/perfilUser"
+              type="submit"
+            ></app-button-main>
+
+            <app-button-secund
+              href="/perfilUser"
+              type="button"
+              text="Cancelar"
+            ></app-button-secund>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

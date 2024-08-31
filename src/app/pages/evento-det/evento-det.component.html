@@ -97,6 +97,8 @@
         ></iframe>
       </div>
       <div class="flex justify-end">
+        <button (click)="confirmPresence(event.id)">Confirmar Presença</button>
+        <button (click)="favoriteEvent(event.id)">Favoritar</button>
         <button
           (click)="editEvent()"
           class="m-1 text-center bg-indigo-600 border rounded-lg text-white font-semibold py-3 px-8 hover:bg-indigo-500 hover:scale-400 m-6"

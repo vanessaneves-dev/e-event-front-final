@@ -1,0 +1,49 @@
+<div class="user-events-page">
+  <h2>Eventos Confirmados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Data</th>
+        <th>Localização</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of confirmedEvents">
+        <td>{{ event.event.title }}</td>
+        <td>{{ event.event.date }}</td>
+        <td>{{ event.event.location }}</td>
+        <td>
+          <button (click)="removeConfirmation(event.eventId)">
+            Remover Confirmação
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Eventos Favoritos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Data</th>
+        <th>Localização</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of favoritedEvents">
+        <td>{{ event.event.title }}</td>
+        <td>{{ event.event.date }}</td>
+        <td>{{ event.event.location }}</td>
+        <td>
+          <button (click)="removeFavorite(event.eventId)">
+            Remover Favorito
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
