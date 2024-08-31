@@ -1,3 +1,9 @@
+:root, [data-theme]{
+  background-color: #F5F8FF!important ;
+  color: #374151;
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; 
       font-family: "Inter", sans-serif; 
@@ -13,3 +19,7 @@ h1{
 .button-font:hover {
   font-weight: bold
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

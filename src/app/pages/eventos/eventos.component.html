@@ -1,38 +1,15 @@
-<app-container>
-  <main>
-    <div class="flex flex-col justify-end mt-[10rem]">
-      <h1
-        class="text-[3rem] font-extrabold uppercase font-mono bg-gradient-to-r from-gray-600 via-gray-400 to-gray-500 inline-block text-transparent bg-clip-text"
-      >
-        Eventos disponíveis
-      </h1>
-    </div>
-    <!-- <form class="flex flex-col md:flex-row gap-3 mt-10">
-      <div class="flex">
-        <input
-          type="text"
-          placeholder="Search for the tool you like"
-          class="w-full md:w-80 px-3 h-10 rounded-l border-2 border-sky-500 focus:outline-none focus:border-sky-500"
-        />
-        <button
-          type="submit"
-          class="bg-sky-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
-        >
-          Search
-        </button>
-      </div>
-      <select
-        id="pricingType"
-        name="pricingType"
-        class="h-10 border-2 border-sky-500 focus:outline-none focus:border-sky-500 text-sky-500 rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
-      >
-        <option value="All" selected="">All</option>
-        <option value="Freemium">Freemium</option>
-        <option value="Free">Free</option>
-        <option value="Paid">Paid</option>
-      </select>
-    </form> -->
-    <form class="flex flex-col md:flex-row gap-3 mt-10">
+<main>
+  <app-banner-geral> </app-banner-geral>
+  <div class="relative z-20 flex flex-col justify-center mt-[10rem] ml-[15rem]">
+    <h1
+      class="text-[3rem] font-extrabold uppercase font-mono bg-gradient-to-r from-gray-700 via-gray-400 to-gray-500 inline-block text-transparent bg-clip-text"
+    >
+      Eventos disponíveis
+    </h1>
+  </div>
+
+  <app-container>
+    <form class="flex flex-col md:flex-row gap-3 mt-[16rem] mb-[3rem]">
       <!-- Campo de Busca -->
       <div class="bg-[#F5F8FF] p-2 rounded-lg w-full md:w-80">
         <div class="relative bg-inherit">
@@ -41,7 +18,7 @@
             id="search"
             name="search"
             class="peer bg-transparent h-10 w-full rounded-lg text-gray-500 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
-            placeholder="Search for the tool you like"
+            placeholder="Filtre o evento"
           />
           <label
             for="search"
@@ -58,10 +35,12 @@
             name="categoria"
             class="peer bg-transparent h-10 w-full rounded-lg text-gray-500 ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
           >
-            <option value="All" selected="" class="text-gray-500">All</option>
-            <option value="Freemium" class="text-gray-500">Freemium</option>
-            <option value="Free" class="text-gray-500">Free</option>
-            <option value="Paid" class="text-gray-500">Paid</option>
+            <option value="All" selected="" class="text-gray-500">Todos</option>
+            <option value="Tecnologia" class="text-gray-500">Tecnologia</option>
+            <option value="Empreendedorismo" class="text-gray-500">
+              Empreendedorismo
+            </option>
+            <option value="Educação" class="text-gray-500">Educação</option>
           </select>
           <label
             for="categoria"
@@ -72,8 +51,8 @@
       </div>
     </form>
 
-    <div class="mt-5">
+    <div class="mt-5 relative">
       <div class="mx-auto"><app-card-evento></app-card-evento></div>
     </div>
-  </main>
-</app-container>
+  </app-container>
+</main>

@@ -29,8 +29,14 @@ export class EventService {
     return this.http.post<EventInterface>(`${this.apiUrl}/organizer/event/new`, newEvent, { headers: this.authService.createAuthorizationHeader() ?? {} })
   }
 
+  getEventsByOrganizer(): Observable<EventInterface[]> {
+    const headers = this.authService.createAuthorizationHeader();
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/organizer/events`, { headers });
+  }
+
   public update (updateEvent: EventInterface): Observable<EventInterface> {
-    return this.http.put<EventInterface>(this.apiUrl + /event/ + updateEvent.id, updateEvent)
+    const headers = this.authService.createAuthorizationHeader();
+    return this.http.put<EventInterface>(`${this.apiUrl}/organizer/event/update/${updateEvent.id}`, updateEvent, {headers})
   }
   
   public remove(removeEvent: EventInterface): Observable<void> {

@@ -12,6 +12,8 @@ import { PerfilOrganizerComponent } from './pages/perfil-organizer/perfil-organi
 import { ListOrganizerComponent } from './components/list-organizer/list-organizer.component';
 // import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { TermosComponent } from './pages/termos/termos.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { EventoGestaoComponent } from './pages/evento-gestao/evento-gestao.component';
 
 
 const routes: Routes = [
@@ -43,11 +45,17 @@ const routes: Routes = [
 {
   path: 'evento-det/:id', component: EventoDetComponent
 },
+{ path: 'edit-event/:id', component: EditEventComponent 
+
+},
+{ path: 'eventGestao/:id', component: EventoGestaoComponent 
+  
+},
 {
   path: 'organizers', component: ListOrganizerComponent
 },
 {
-  path: 'perfilOrganizer/:id', component: PerfilOrganizerComponent
+  path: 'perfilOrganizer', component: PerfilOrganizerComponent
 },
 // { path: 'error', component: ErrorPageComponent },
 // { path: '**', redirectTo: 'error' } 

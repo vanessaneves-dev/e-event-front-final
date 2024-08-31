@@ -26,11 +26,11 @@ export class EventUserService {
     return this.http.get<EventUserInterface[]>(this.apiUrl + '/urers/all');
   }
 
-  getUserById(id: number): Observable<EventUserInterface> {
+  getUserById(id: string): Observable<EventUserInterface> {
     return this.http.get<EventUserInterface>(`${this.apiUrl}/urers/${id}`);
   }
 
-  updateUser(id: number, user: EventUserInterface): Observable<EventUserInterface> {
+  updateUser(id: string, user: EventUserInterface): Observable<EventUserInterface> {
     const formData = new FormData();
     formData.append('name', user.name);
     formData.append('email', user.email);
@@ -39,7 +39,7 @@ export class EventUserService {
     return this.http.put<EventUserInterface>(`${this.apiUrl}/urers/${id}`, formData);
   }
 
-  deleteUser(id: number): Observable<void> {
+  deleteUser(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/urers/${id}`);
   }
 }

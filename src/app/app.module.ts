@@ -7,6 +7,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { ErrorInterceptorService } from './core/error-interceptor.service'; 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,6 +41,9 @@ import { PerfilOrganizerComponent } from './pages/perfil-organizer/perfil-organi
 import { ListOrganizerComponent } from './components/list-organizer/list-organizer.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { TermosComponent } from './pages/termos/termos.component';
+import { BannerGeralComponent } from './components/banner-geral/banner-geral.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { EventoGestaoComponent } from './pages/evento-gestao/evento-gestao.component';
 
 
 @NgModule({
@@ -72,7 +76,10 @@ import { TermosComponent } from './pages/termos/termos.component';
     PerfilOrganizerComponent,
     ListOrganizerComponent,
     ErrorPageComponent,
-    TermosComponent
+    TermosComponent,
+    BannerGeralComponent,
+    EditEventComponent,
+    EventoGestaoComponent
 
   ],
   imports: [

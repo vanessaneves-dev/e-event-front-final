@@ -1,0 +1,134 @@
+<div class="p-6">
+  <h1 class="text-4xl font-bold text-gray-900 mb-4">Editar Evento</h1>
+
+  <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+    <div class="mb-4">
+      <label class="block text-gray-700">Título</label>
+      <input
+        type="text"
+        [(ngModel)]="event.title"
+        name="title"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Descrição</label>
+      <textarea
+        [(ngModel)]="event.description"
+        name="description"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      ></textarea>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Data</label>
+      <input
+        type="date"
+        [(ngModel)]="event.date"
+        name="date"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Hora</label>
+      <input
+        type="time"
+        [(ngModel)]="event.time"
+        name="time"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Endereço</label>
+      <input
+        type="text"
+        [(ngModel)]="event.street"
+        name="street"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        placeholder="Rua"
+        required
+      />
+      <input
+        type="text"
+        [(ngModel)]="event.number"
+        name="number"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        placeholder="Número"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Cidade</label>
+      <input
+        type="text"
+        [(ngModel)]="event.city"
+        name="city"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Estado</label>
+      <input
+        type="text"
+        [(ngModel)]="event.state"
+        name="state"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Código Postal</label>
+      <input
+        type="text"
+        [(ngModel)]="event.postalCode"
+        name="postalCode"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Categoria</label>
+      <input
+        type="text"
+        [(ngModel)]="event.category"
+        name="category"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Imagem URL</label>
+      <input
+        type="text"
+        [(ngModel)]="event.image"
+        name="image"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">Mapa URL</label>
+      <input
+        type="text"
+        [(ngModel)]="event.maps"
+        name="maps"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+      />
+    </div>
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+      Salvar Alterações
+    </button>
+  </form>
+</div>

@@ -18,18 +18,18 @@
           {{ event.title }}
         </h2>
 
-        <div class="mt-8">
+        <div class="mt-8 flex content-end justify-end">
           <a [routerLink]="['/evento-det', event.id]">
             <app-button-main text="Detalhes"> </app-button-main>
           </a>
         </div>
-        <div class="mt-8">
+        <!-- <div class="mt-8">
           <app-button-secund
             text="Excluir"
             [routerLink]="['/evento-det', event.id]"
           >
           </app-button-secund>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

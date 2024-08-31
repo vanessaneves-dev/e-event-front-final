@@ -29,7 +29,8 @@ constructor(private formBuilder: FormBuilder,
       number: [''],
       city: [''],
       state: [''],
-      postalCode: [''],       
+      postalCode: [''],    
+      maps: [null],
      image: [null],
     })
   }

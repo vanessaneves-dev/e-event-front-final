@@ -1,5 +1,5 @@
-<form>
-  <div id="contact-us" class="overflow-hidden py-16 px-4">
+<form class="relative">
+  <div id="contact-us" class="overflow-hidden py-16 px-4 relative">
     <div class="relative mx-auto max-w-[45rem]">
       <svg
         class="absolute left-full translate-x-1/2 transform"
@@ -23,7 +23,7 @@
               y="0"
               width="4"
               height="4"
-              class="text-indigo-300 dark:text-slate-600"
+              class="text-indigo-300 ntext-slate-600"
               fill="currentColor"
             ></rect>
           </pattern>
@@ -56,7 +56,7 @@
               y="0"
               width="4"
               height="4"
-              class="text-indigo-300 dark:text-slate-800"
+              class="text-indigo-300 ntext-slate-800"
               fill="currentColor"
             ></rect>
           </pattern>
@@ -160,12 +160,12 @@
             <div class="relative">
               <input
                 type="text"
-                id="street"
-                name="street"
-                formControlName="street"
+                id="city"
+                name="city"
+                formControlName="city"
                 class="peer bg-white h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
               /><label
-                for="street"
+                for="city"
                 class="absolute bg-white cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
                 >Cidade</label
               >
@@ -183,48 +183,7 @@
                 >UF</label
               >
             </div>
-            <div class="py-3 relative">
-              <label
-                class="inline-flex items-center text-gray-500"
-                for="indigoCheckBox"
-              >
-                <input
-                  id="indigoCheckBox"
-                  type="checkbox"
-                  class="w-4 h-4 accent-indigo-700"
-                  checked
-                />
-                <span class="ml-2">Evento On-line</span>
-              </label>
-            </div>
-            <div class="relative">
-              <input
-                type="text"
-                id="googlemapslink"
-                name="googlemapslink"
-                class="peer bg-white h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
-              /><label
-                for="state"
-                class="absolute bg-white cursor-text left-0 -top-3 text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
-                >Link google maps</label
-              >
-            </div>
-            <div class="relative bg-inherit">
-              <select
-                id="status"
-                name="status"
-                class="peer bg-white h-10 w-full rounded-lg text-gray-500 ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
-              >
-                <option value="">Selecione o status</option>
-                <option value="Scheduled">Aberto</option>
-                <option value="Cancelled">Cancelado</option>
-                <option value="Completed">Finalizado</option>
-              </select>
-              <label
-                for="status"
-                class="absolute bg-white cursor-text left-0 -top-3 text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
-              ></label>
-            </div>
+
             <div>
               <div class="bg-white rounded-lg">
                 <div class="relative">
@@ -264,6 +223,19 @@
                   </label>
                 </div>
               </div>
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                id="googlemapslink"
+                name="googlemapslink"
+                formControlName="maps"
+                class="peer bg-white h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
+              /><label
+                for="state"
+                class="absolute bg-white cursor-text left-0 -top-3 text-sm text-gray-500 mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-indigo-700 peer-focus:text-sm transition-all"
+                >Link google maps</label
+              >
             </div>
 
             <div class="relative">

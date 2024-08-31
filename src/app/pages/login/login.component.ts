@@ -10,5 +10,6 @@ export class LoginComponent {
 
   openTab(tabName: string): void {
     this.activeTab = tabName;
+    console.log('Active tab is now:', this.activeTab);
   }
 }
