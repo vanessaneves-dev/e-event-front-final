@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
@@ -15,9 +15,12 @@ export class AuthOrganizerService {
    private router: Router
   ) { }
 
+  private loginSuccessSubject = new Subject<void>();
+  loginSuccess$ = this.loginSuccessSubject.asObservable();
+
   autenticarOrganizer(email: String, password: String): Observable<any>{
     return this.http.post(`${this.apiUrl}/organizer/auth`, {email, password})
-
+    this.loginSuccessSubject.next();
   }
 
  

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,8 +14,12 @@ export class AuthUserService {
    private router: Router
   ) { }
 
+  private loginSuccessSubject = new Subject<void>();
+  loginSuccess$ = this.loginSuccessSubject.asObservable();
+
   autenticarUser(email: String, password: String): Observable<any>{
-    return this.http.post(`${this.apiUrl}/user/auth`, {email, password})}
+    return this.http.post(`${this.apiUrl}/user/auth`, {email, password})
+  }
 
     private createAuthorizationHeader(): HttpHeaders {
       const jwtToken = localStorage.getItem('JWT');

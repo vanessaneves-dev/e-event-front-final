@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { AuthOrganizerService } from 'src/app/core/organizer/auth-organizer.service';
 
 
@@ -18,7 +19,8 @@ export class HeaderComponent implements OnInit{
 
   constructor(public authService: AuthOrganizerService,
     private router: Router,
-  ) { }
+  ) { this.authService.loginSuccess$.subscribe(() => {
+    this.checkLoginStatus(); })}
 
 
   ngOnInit(): void {
@@ -55,16 +57,25 @@ export class HeaderComponent implements OnInit{
    
   setUserType(token: string){
     console.log('setUserType() chamado com token:', token);
-    if(token.includes('access_user_token')){
+    try{
+      const decodedToken: any = jwtDecode(token);
+      console.log('Token decodificado:', decodedToken);
+
+      const roles = decodedToken.roles || [];
+    if(roles.includes('USER')){
       this.userType = 'user';
       console.log('Tipo de usuário definido como: user');
-    } else if (token.includes('access_organizer_token')){
+    } else if (roles.includes('ORGANIZER')){
       this.userType = 'organizer';
       console.log('Tipo de usuário definido como: organizer');
     }else {
       this.userType = null;
       console.log('Tipo de usuário não pôde ser determinado.');
     }
+  }catch{
+    console.error('Erro ao decodificar o token:');
+    this.userType = null;
+  }
   }
  
 

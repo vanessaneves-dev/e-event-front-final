@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { AuthOrganizerService } from 'src/app/core/organizer/auth-organizer.service';
 
 @Component({
@@ -21,7 +22,7 @@ constructor(private formBuider: FormBuilder,
       password: [null,  Validators.required]
     })
   }
-  
+ 
   
   loginOrg(){
       const email = this.authOrganizer.value.email;
@@ -33,6 +34,7 @@ constructor(private formBuider: FormBuilder,
           console.log("Token JWT:", jwtToken);
           localStorage.setItem('JWT', jwtToken);
           console.log("armazenou", jwtToken);
+         
           this.router.navigateByUrl('/')
         },
         error: ( err) => {
