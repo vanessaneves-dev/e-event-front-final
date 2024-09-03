@@ -27,7 +27,7 @@ export class EventUserService {
   }
 
   public getAllUsers(): Observable<EventUserInterface[]> {
-    return this.http.get<EventUserInterface[]>(this.apiUrl + '/urers/all');
+    return this.http.get<EventUserInterface[]>(this.apiUrl + '/users/all');
   }
 
  public getUserById(id: string): Observable<EventUserInterface> {

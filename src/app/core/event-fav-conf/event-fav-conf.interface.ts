@@ -6,7 +6,18 @@ export interface EventFavConfInterface {
     title: string;
     description: string;
     date: string;
-    location: string;
+    time: string;               // Adiciona a hora do evento
+    image: string;              // Adiciona a imagem do evento
+    maps: string;               // Adiciona o link para o mapa
+    organizer: {                // Adiciona os dados do organizador
+      name: string;
+      email: string;
+    };
+    category: string;  
+    street: string;
+    number: string;
+    city: string;
+    state: string;
   };
   isConfirmed: boolean;
   isFavorited: boolean;

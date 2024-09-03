@@ -1,7 +1,7 @@
 <section class="py-10 my-auto n900">
   <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
     <div
-      class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center n800/40"
+      class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl shadow-indigo-500 p-4 rounded-xl h-fit self-center n800/40"
     >
       <div class="">
         <div class="flex flex-col justify-end items-center mt-10 mb-10">
@@ -22,7 +22,7 @@
               <img
                 class="w-full h-full object-cover object-center rounded-full"
                 [src]="imageUrl || 'assets/images/default-avatar.png'"
-                alt=""
+                alt="imagem de perfil do usuário"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@
           <div class="flex gap-4 mt-4 px-4 justify-end">
             <button
               (click)="toggleEditMode()"
-              class="p-4 px-4 rounded-lg bg-indigo-500 text-white text-lg font-semibold"
+              class="m-1 text-center bg-indigo-600 border rounded-lg text-white font-semibold py-3 px-8 hover:bg-indigo-500 hover:scale-400 m-6"
             >
               Editar
             </button>
@@ -101,7 +101,7 @@
               <img
                 class="w-full h-full object-cover object-center rounded-full"
                 [src]="imageUrl || 'assets/images/default-avatar.png'"
-                alt=""
+                alt="imagem de perfil do usuário"
               />
             </div>
           </div>

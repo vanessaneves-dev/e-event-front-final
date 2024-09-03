@@ -12,15 +12,63 @@
       ></div>
     </div>
     <div
-      class="relative z-10 w-full max-w-4xl bg-white shadow-lg shadow-indigo-500/50 rounded-lg overflow-hidden my-5"
+      class="relative z-10 w-full max-w-4xl bg-white shadow-lg shadow-indigo-500 rounded-lg overflow-hidden my-5"
     >
-      <img class="w-full" src="{{ event.image }}" alt="" />
+      <img
+        class="w-full h-[40rem] object-cover"
+        src="{{ event.image }}"
+        alt="Imagem destaque do evento"
+      />
       <div class="p-6">
-        <h1 class="text-4xl font-bold text-gray-700 mb-4">
-          {{ event.title }}
-        </h1>
+        <div class="flex justify-between">
+          <div>
+            <h1 class="text-4xl font-bold text-gray-700 mb-4">
+              {{ event.title }}
+            </h1>
+          </div>
+          <div *ngIf="event">
+            <button
+              (click)="favoriteEvent(event.id)"
+              *ngIf="isLoggedIn && userType === 'user'"
+              title="Adicionar aos Favoritos"
+            >
+              <svg
+                *ngIf="isFavorited"
+                class="w-6 h-6 text-red-500"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#4338ca"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-heart"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"
+                />
+              </svg>
+              <svg
+                *ngIf="!isFavorited"
+                class="w-6 h-6 text-gray-200"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#818cf8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
         <p class="text-gray-600 mb-6">
-          {{ event.date | date : "yyyy-MM-dd" | date : "dd/MM/yyyy" }} às
+          {{ event.date | date : "dd/MM/yyyy" }} às
           {{ event.time }}
         </p>
         <h2
@@ -96,11 +144,24 @@
           style="border: 0"
         ></iframe>
       </div>
+
       <div class="flex justify-end">
-        <button (click)="confirmPresence(event.id)">Confirmar Presença</button>
-        <button (click)="favoriteEvent(event.id)">Favoritar</button>
+        <button
+          class="m-1 text-center bg-gray-100 border rounded-lg text-gray-700 font-semibold py-3 px-8 hover:bg-gray-300 hover:scale-300 m-6"
+        >
+          <a href="/eventos">Voltar</a>
+        </button>
+        <button
+          (click)="confirmPresence(event.id)"
+          *ngIf="isLoggedIn && userType === 'user'"
+          class="m-1 text-center bg-indigo-600 border rounded-lg text-white font-semibold py-3 px-8 hover:bg-indigo-500 hover:scale-400 m-6"
+        >
+          <a href="/userEventos">Confirmar Presença</a>
+        </button>
+
         <button
           (click)="editEvent()"
+          *ngIf="isLoggedIn && userType === 'organizer'"
           class="m-1 text-center bg-indigo-600 border rounded-lg text-white font-semibold py-3 px-8 hover:bg-indigo-500 hover:scale-400 m-6"
         >
           Editar Evento

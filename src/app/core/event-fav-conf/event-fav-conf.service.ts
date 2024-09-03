@@ -18,13 +18,13 @@ export class EventFavConfService {
   getConfirmedEvents(userId: string): Observable<any[]> {
    
   const headers = this.authService.createAuthorizationHeader();
-    return this.http.get<any[]>(`${this.apiUrl}/confirmed?userId=${userId}`, { headers });
+    return this.http.get<any[]>(`${this.apiUrl}/confirmed/${userId}`, { headers });
   }
 
   getFavoritedEvents(userId: string): Observable<any[]> {
    
   const headers = this.authService.createAuthorizationHeader();
-    return this.http.get<any[]>(`${this.apiUrl}/favorites?userId=${userId}`, { headers });
+    return this.http.get<any[]>(`${this.apiUrl}/favorites/${userId}`, { headers });
   }
 
   confirmEvent(userId: string, eventId: string): Observable<any> {
@@ -53,13 +53,14 @@ export class EventFavConfService {
     // Novo método para remover confirmação de presença
     removeConfirmedEvent(userId: string, eventId: string): Observable<any> {
       const headers = this.authService.createAuthorizationHeader();
-      return this.http.delete<any>(`${this.apiUrl}/confirm?userId=${userId}&eventId=${eventId}`, { headers });
+      return this.http.delete<any>(`${this.apiUrl}/confirm/${userId}/${eventId}`, { headers });
     }
+    
   
     // Novo método para remover um evento dos favoritos
     removeFavoritedEvent(userId: string, eventId: string): Observable<any> {
       const headers = this.authService.createAuthorizationHeader();
-      return this.http.delete<any>(`${this.apiUrl}/favorite?userId=${userId}&eventId=${eventId}`, { headers });
+      return this.http.delete<any>(`${this.apiUrl}/favorite/${userId}/${eventId}`, { headers });
     }
 
   
