@@ -14,6 +14,8 @@ import { ListOrganizerComponent } from './components/list-organizer/list-organiz
 import { TermosComponent } from './pages/termos/termos.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { EventoGestaoComponent } from './pages/evento-gestao/evento-gestao.component';
+import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
+import { UserEventosComponent } from './pages/user-eventos/user-eventos.component';
 
 
 const routes: Routes = [
@@ -56,6 +58,12 @@ const routes: Routes = [
 },
 {
   path: 'perfilOrganizer', component: PerfilOrganizerComponent
+},
+{
+  path: 'perfilUser', component: PerfilUserComponent
+},
+{
+  path: 'userEventos', component: UserEventosComponent
 },
 // { path: 'error', component: ErrorPageComponent },
 // { path: '**', redirectTo: 'error' } 

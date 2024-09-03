@@ -1,0 +1,16 @@
+<div
+  id="mapModal"
+  [ngStyle]="{ display: isOpen ? 'block' : 'none' }"
+  class="modal"
+>
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <iframe
+      [src]="safeMapUrl"
+      width="100%"
+      height="400"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>

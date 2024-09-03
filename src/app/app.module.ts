@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'; 
+
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { ErrorInterceptorService } from './core/error-interceptor.service'; 
 
@@ -36,7 +37,7 @@ import { ContatoComponent } from './pages/contato/contato.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { LoginOrgComponent } from './components/login-org/login-org.component';
-import { PerfilUserComponent } from './components/perfil-user/perfil-user.component';
+import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { PerfilOrganizerComponent } from './pages/perfil-organizer/perfil-organizer.component';
 import { ListOrganizerComponent } from './components/list-organizer/list-organizer.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
@@ -44,6 +45,8 @@ import { TermosComponent } from './pages/termos/termos.component';
 import { BannerGeralComponent } from './components/banner-geral/banner-geral.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { EventoGestaoComponent } from './pages/evento-gestao/evento-gestao.component';
+import { UserEventosComponent } from './pages/user-eventos/user-eventos.component';
+import { MapModalComponent } from './components/map-modal/map-modal.component';
 
 
 @NgModule({
@@ -79,7 +82,9 @@ import { EventoGestaoComponent } from './pages/evento-gestao/evento-gestao.compo
     TermosComponent,
     BannerGeralComponent,
     EditEventComponent,
-    EventoGestaoComponent
+    EventoGestaoComponent,
+    UserEventosComponent,
+    MapModalComponent
 
   ],
   imports: [

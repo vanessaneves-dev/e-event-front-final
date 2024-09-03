@@ -22,7 +22,7 @@
               <img
                 class="w-full h-full object-cover object-center rounded-full"
                 [src]="imageUrl || 'assets/images/default-avatar.png'"
-                alt="Imagem de perfil do usuário"
+                alt="imagem de perfil do usuário"
               />
             </div>
           </div>
@@ -35,7 +35,7 @@
               <p
                 class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
               >
-                {{ perfilOrganizerForm.get("name")?.value }}
+                {{ perfilUserForm.get("name")?.value }}
               </p>
             </div>
             <div class="w-full mb-4">
@@ -45,7 +45,7 @@
               <p
                 class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
               >
-                {{ perfilOrganizerForm.get("username")?.value }}
+                {{ perfilUserForm.get("username")?.value }}
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@
               <p
                 class="mt-2 p-4 w-full border-2 rounded-lg ntext-gray-200 nborder-gray-600 n800"
               >
-                {{ perfilOrganizerForm.get("email")?.value }}
+                {{ perfilUserForm.get("email")?.value }}
               </p>
             </div>
             <div class="w-full mb-4">
@@ -88,8 +88,8 @@
         </div>
         <form
           *ngIf="isEditing"
-          [formGroup]="perfilOrganizerForm"
-          (ngSubmit)="updateOrganizer()"
+          [formGroup]="perfilUserForm"
+          (ngSubmit)="updateUser()"
         >
           <div
             class="w-full rounded-sm bg-cover bg-center bg-no-repeat items-center"
@@ -110,7 +110,7 @@
             class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full"
           >
             <div class="w-full mb-4 mt-6">
-              <label for="" class="mb-2 ntext-gray-300">Nome / Empresa</label>
+              <label for="" class="mb-2 ntext-gray-300">Nome</label>
               <input
                 type="text"
                 class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
@@ -119,9 +119,7 @@
               />
             </div>
             <div class="w-full mb-4 lg:mt-6">
-              <label for="" class="ntext-gray-300"
-                >Username / Nome Fantasia</label
-              >
+              <label for="" class="ntext-gray-300">Username </label>
               <input
                 type="text"
                 class="peer bg-transparent h-10 w-full rounded-lg text-gray-700 placeholder-transparent ring-2 px-2 ring-gray-300 focus:ring-indigo-700 focus:outline-none focus:border-rose-600"
@@ -160,16 +158,17 @@
             </div>
           </div>
           <div class="mt-4 text-end">
+            <app-button-main
+              text="Salvar alterações"
+              href="/perfilUser"
+              type="submit"
+            ></app-button-main>
+
             <app-button-secund
-              href="/perfilOrganizer"
+              href="/perfilUser"
               type="button"
               text="Cancelar"
             ></app-button-secund>
-            <app-button-main
-              text="Salvar alterações"
-              href="/perfilOrganizer"
-              type="submit"
-            ></app-button-main>
           </div>
         </form>
       </div>

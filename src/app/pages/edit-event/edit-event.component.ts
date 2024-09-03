@@ -10,7 +10,7 @@ import { EventInterface } from 'src/app/core/events/events.inteface';
   styles: [
   ]
 })
-export class EditEventComponent {
+export class EditEventComponent implements OnInit{
   event: EventInterface = {
     id: '',
     title: '',
@@ -51,7 +51,7 @@ export class EditEventComponent {
     if (this.event) {
       this.eventService.update(this.event).subscribe(() => {
         console.log("edit concluido" ),
-        this.router.navigate(['/event-details', this.event.id]);
+        this.router.navigate(['/evento-det', this.event.id]);
       });
     }
   }

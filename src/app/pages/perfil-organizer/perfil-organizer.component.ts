@@ -15,7 +15,7 @@ perfilOrganizerForm!: FormGroup;
 organizerId!: string;
 username: string = "";
 imageUrl: string = '';
-isEditing: boolean = false; // Estado para controlar o modo de edição
+isEditing: boolean = false; 
 
 
 constructor(
